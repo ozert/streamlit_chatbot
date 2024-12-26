@@ -44,6 +44,8 @@ poetry install
 
 #### 4. **🏃 Ready to run ? 🏃**
 
+Note: **chat_details.json** and **Assistance_in_car_selection.json** files are examples. It's completely fine to remove them.
+
 ```
 streamlit run app.py
 ```
