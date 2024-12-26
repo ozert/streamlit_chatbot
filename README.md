@@ -36,10 +36,10 @@ conda activate streamlit_chatbot
 pip install poetry
 ```
 
-* **Initialize your poetry project:**
+* **Install your project dependencies:**
 
 ```
-poetry init
+poetry install
 ```
 
 #### 4. **🏃 Ready to run ? 🏃**
