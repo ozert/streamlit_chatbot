@@ -1,8 +1,11 @@
 import streamlit as st
 from datetime import datetime
 from ai.chat import generate_response, summarize_conversation
+from dotenv import load_dotenv
 import os
 import json
+
+load_dotenv()
 
 st.set_page_config(page_title="Custom Chatbot", page_icon=":loudspeaker:")
 #st.title("ChatBot")
@@ -22,7 +25,7 @@ def save_conversation_details(filepath="chat_details.json"):
   try:
     with open(filepath, 'w', encoding="utf-8") as file:
       json.dump(st.session_state.chat_details, file, indent=4) # [-1]
-  except Exception as e:
+  except Exception:
     st.error("⛔ Couldn't save chat details!")
 
 
@@ -50,7 +53,7 @@ def save_chat_history():
                 json.dump(st.session_state.messages, f, indent=4)
             st.success("✅ Conversation saved!")
 
-        except:
+        except Exception:
             st.error("⛔ Couldn't save the conversation!")
         
         st.session_state.messages = []
